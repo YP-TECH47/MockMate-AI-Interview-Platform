@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MockMate – AI Interview Platform
 
-## Getting Started
+MockMate is an AI-powered interview platform that enables candidates to experience personalized, real-time technical interviews based on their skills, technology stack, and preferences. It combines conversational AI, voice-based interaction, and intelligent interview management to create a more realistic interview preparation experience.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **AI-Powered Interviewer:** Conducts interactive technical interviews using an AI-driven voice assistant.
+- **Personalized Interviews:** Generates interview experiences based on the candidate's technology stack, skills, and preferences.
+- **Pre-Interview Customization:** Allows candidates to communicate with the AI interviewer before starting an interview to configure their interview experience.
+- **Real-Time Voice Interaction:** Enables natural voice-based conversations between candidates and the AI interviewer using Vapi.
+- **Live Speech-to-Text:** Generates subtitles by converting the candidate's spoken responses into text.
+- **Conversational Edge-Case Handling:** Handles prolonged pauses, response delays, and unexpected interaction scenarios to maintain a smooth conversation.
+- **Interview Management:** Provides interview listings, dashboards, interview details, and feedback reports.
+- **AI-Generated Feedback:** Evaluates interview responses and generates performance scores and feedback for candidates.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Architecture
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application follows a modular architecture that separates authentication, interview experience, interview services, external integrations, and shared UI components.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![MockMate Architecture](./architecture.png)
 
-## Learn More
+### Architecture Components
 
-To learn more about Next.js, take a look at the following resources:
+- **Identity & Sessions:** Handles user authentication and session management through Firebase Authentication.
+- **Interview Experience:** Manages interview listings, dashboards, interview details, feedback reports, and the voice interview agent.
+- **Interview Services:** Handles interview generation, interviewer configuration, interview execution, and feedback generation.
+- **External Integrations:** Connects Firebase services, Vapi voice infrastructure, Google AI services, and Firestore.
+- **Shared Presentation:** Provides reusable interview cards, technology icons, form components, and UI primitives.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Frontend**
+- Next.js
+- React.js
+- TypeScript
+- Tailwind CSS
 
-## Deploy on Vercel
+**AI & Voice Integration**
+- Vapi AI – Real-time voice assistant and conversational interaction
+- Google AI SDK – AI model integration
+- AI SDK – AI-powered generation workflows
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Backend & Database**
+- Firebase Authentication
+- Firebase Admin SDK
+- Cloud Firestore
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Libraries & Utilities**
+- React Hook Form
+- Zod
+- Radix UI
+- Lucide React
+- Day.js
+- Sonner
+
+## Core Objective
+
+MockMate aims to make technical interview preparation more interactive, personalized, and realistic by replacing static question-based practice with an adaptive, AI-driven voice interview experience.
